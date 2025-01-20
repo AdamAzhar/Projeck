@@ -1,0 +1,575 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Pastikan box-sizing diatur */
+}
+
+body {
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.8); /* Latar belakang navbar yang lebih gelap */
+  color: white;
+  padding: 15px; /* Tambahkan padding untuk navbar */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan untuk efek kedalaman */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between; /* Memastikan elemen di dalam navbar terdistribusi dengan baik */
+  align-items: center; /* Pusatkan elemen secara vertikal */
+}
+
+.navbar .logo h1 {
+  margin: 0; /* Hapus margin untuk logo */
+  font-size: 40px; /* Ukuran font untuk logo */
+  color: #00b894; /* Warna logo */
+}
+
+.navbar .menu {
+  display: flex;
+  justify-content: space-around;
+  width: auto; /* Ubah menjadi auto untuk mencegah overflow */
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px; /* Tambahkan padding untuk tautan */
+  transition: background 0.3s, color 0.3s; /* Transisi untuk efek hover */
+  border-radius: 5px; /* Sudut melengkung untuk tautan */
+}
+
+.navbar .menu a:hover {
+  color: #00b894;
+}
+
+.hamburger {
+  display: none; /* Sembunyikan hamburger secara default */
+  font-size: 30px;
+  cursor: pointer;
+  color: white; /* Warna hamburger */
+}
+
+/* Media Query untuk layar kecil */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none; /* Sembunyikan menu pada layar kecil */
+    flex-direction: column; /* Ubah arah menu menjadi kolom */
+    position: absolute;
+    top: 100%; /* Tempatkan di bawah navbar */
+    left: 0;
+    width: 100%; /* Pastikan lebar menu 100% */
+    background: rgba(0, 0, 0, 0.9); /* Latar belakang menu */
+    z-index: 1000; /* Pastikan menu berada di atas elemen lain */
+  }
+
+  .navbar .menu a {
+    padding: 15px; /* Tambahkan padding untuk tautan */
+    text-align: center; /* Pusatkan teks */
+    border-radius: 0; /* Hapus sudut melengkung untuk tautan di menu */
+  }
+
+  .hamburger {
+    display: block; /* Tampilkan hamburger pada layar kecil */
+  }
+
+  .menu.active {
+    display: flex; /* Tampilkan menu saat hamburger diklik */
+  }
+}
+
+img {
+  max-width: 100%; /* Pastikan gambar tidak melebihi lebar kontainer */
+  height: auto; /* Biarkan tinggi otomatis untuk menjaga rasio aspek */
+}
+
+.hr {
+  height: 10px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: #00b894;
+  margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
+  margin-top: 2cm;
+}
+
+.parallax {
+  background-image: url("img/Background.png ");
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+section h2 {
+  font-size: 30px;
+  font-weight: 200;
+  text-shadow: 2px 1px 5px black;
+
+  text-transform: uppercase;
+}
+section h1 {
+  margin: 30px 0 20px 0;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px black;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 25px;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 1px black;
+}
+
+section a {
+  padding: 12px 30px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+}
+
+section .btnone {
+  background: #fff;
+  color: #000;
+}
+
+.btnone:hover {
+  background: #00b894;
+  color: white;
+}
+
+section .btntwo {
+  background: #00b894;
+  color: white;
+}
+
+.btntwo:hover {
+  background: #fff;
+  color: #000;
+}
+
+.change_content:after {
+  content: "";
+  animation: changetext 10s infinite linear;
+  color: #00b894;
+}
+
+@keyframes changetext {
+  0% {
+    content: "Malioboro Street";
+  }
+  20% {
+    content: "Prambanan Temple";
+  }
+  35% {
+    content: "Mount Ungaran";
+  }
+  60% {
+    content: "Jomblang Cave";
+  }
+  80% {
+    content: "Yogyakarta Monument";
+  }
+  100% {
+    content: "HEHA Sky View";
+  }
+}
+
+.heading {
+  margin-top: 2cm;
+  text-align: center;
+  color: black; /* Perbaiki typo dari 'balck' menjadi 'black' */
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: #00b894;
+  text-transform: uppercase;
+}
+
+.littledes {
+  text-align: center;
+  margin-top: -1cm;
+}
+.about {
+  margin-top: 10px; /* Atur nilai ini sesuai kebutuhan untuk memberikan ruang */
+  padding: 10px; /* Tambahkan padding jika diperlukan untuk ruang di dalam */
+}
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .list .item {
+  width: 180px;
+  height: 250px;
+  position: absolute;
+  top: 80%;
+  transform: translateY(-70%);
+  left: 70%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  background-position: 50% 50%;
+  background-size: cover;
+  z-index: 100;
+  transition: 1s;
+}
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .list .item:nth-child(3) {
+  left: 67%;
+}
+
+.carousel .list .item:nth-child(4) {
+  left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(5) {
+  left: calc(67% + 400px);
+}
+
+.carousel .list .item:nth-child(6) {
+  left: calc(67% + 600px);
+}
+
+.carousel .list .item:nth-child(n + 7) {
+  left: calc(67% + 800px);
+  opacity: 0;
+}
+
+.list .item .content {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  width: 400px;
+  text-align: left;
+  color: #fff;
+  display: none;
+}
+
+.list .item:nth-child(2) .content {
+  display: block;
+}
+
+.content .title {
+  font-size: 100px;
+  text-transform: uppercase;
+  color: #14ff72cb;
+  font-weight: bold;
+  line-height: 1;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content .name {
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.8);
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-left: 5px;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+
+.content .btn {
+  margin-left: 5px;
+
+  opacity: 0;
+  animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+
+.content .btn button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px solid #fff;
+}
+
+.content .btn button:nth-child(1) {
+  margin-right: 15px;
+}
+
+.content .btn button:nth-child(2) {
+  background: transparent;
+  color: #14ff72cb;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+
+.content .btn button:nth-child(2):hover {
+  background-color: #14ff72cb;
+  color: #fff;
+  border-color: #14ff72cb;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+
+/* Carousel */
+
+/* next prev arrows */
+
+.arrows {
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  z-index: 100;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrows button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #14ff72cb;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: monospace;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.arrows button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* time running */
+.carousel .timeRunning {
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 4px;
+  background-color: #14ff72cb;
+  left: 0;
+  top: 0;
+  animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 999px) {
+  header {
+    padding-left: 50px;
+  }
+
+  .list .item .content {
+    left: 50px;
+  }
+
+  .content .title,
+  .content .name {
+    font-size: 70px;
+  }
+
+  .content .des {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  header nav a {
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .list .item .content {
+    top: 40%;
+  }
+
+  .content .title,
+  .content .name {
+    font-size: 45px;
+  }
+
+  .content .btn button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
+
+.food-carousel {
+  width: 100%;
+  height: 400px; /* Atur tinggi sesuai kebutuhan */
+  position: relative;
+  overflow: hidden;
+}
+
+.food-list {
+  display: flex;
+  transition: transform 0.5s ease; /* Transisi untuk pergerakan */
+}
+
+.food-item {
+  min-width: 100%; /* Setiap item mengambil lebar penuh */
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.food-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.food-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.food-name {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.food-des {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.food-btn button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.food-btn button:hover {
+  background: #00b894; /* Warna hover */
+  color: white;
+}
+
+.food-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.food-arrows button {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.food-arrows button:hover {
+  background: #00b894; /* Warna hover untuk tombol */
+}
+
+/* time running */
+.food-timeRunning {
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 4px;
+  background-color: #14ff72cb;
+  left: 0;
+  bottom: 0;
+  animation: runningTime 7s linear 1 forwards;
+}
+
+@keyframes runningTime {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
