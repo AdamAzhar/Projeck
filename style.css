@@ -4,6 +4,16 @@
   box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar dan tinggi elemen */
 }
 
+@font-face {
+  font-family: jogja;
+  src: url(font/Jogjajakartype.otf);
+}
+
+@font-face {
+  font-family: cool;
+  src: url(font/Coolvetica\ Rg\ It.otf);
+}
+
 body {
   margin: 0; /* Menghilangkan margin pada body */
   overflow-x: hidden;
@@ -101,6 +111,46 @@ img {
   background-color: #00b894;
   margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
   margin-top: 3.5cm;
+}
+
+.sect1 {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on smaller screens */
+  color: black;
+  align-items: center; /* Center align items */
+  padding: 20px;
+  background: #ffffff;
+  margin: 20px auto;
+  border-radius: 10px;
+
+  max-width: 1000px;
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.sect1:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.text {
+  text-align: center; /* Center text for better readability */
+  margin-bottom: 20px; /* Space between text and image */
+}
+
+.h2 {
+  font-size: 2em; /* Larger font size for the heading */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+.sect2 {
+  font-size: 1.1em; /* Slightly larger font for the paragraph */
+  line-height: 1.6; /* Improved line height for readability */
+  max-width: 800px; /* Limit width for better readability */
+}
+
+.sect-image {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for the image */
 }
 
 .parallax {
@@ -229,7 +279,7 @@ section .btntwo {
   margin-top: -1cm;
 }
 .about {
-  margin-top: -3cm; /* Atur nilai ini sesuai kebutuhan untuk memberikan ruang */
+  margin-top: 0.5cm; /* Atur nilai ini sesuai kebutuhan untuk memberikan ruang */
   padding: 10px; /* Tambahkan padding jika diperlukan untuk ruang di dalam */
 }
 
@@ -623,4 +673,50 @@ section .btntwo {
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
+}
+
+/*content*/
+
+.hr1 {
+  height: 10px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: #00b894;
+  margin: 20px auto;
+  margin-top: -2.5cm;
+}
+
+.text {
+  flex: 1;
+  padding: 10px;
+}
+img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 20px;
+  transition: transform 0.3s;
+  margin: 10px;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+.jog {
+  font-family: jogja;
+}
+
+.cool {
+  font-family: cool;
 }
