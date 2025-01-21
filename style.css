@@ -1,13 +1,13 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Pastikan box-sizing diatur */
+  margin: 0; /* Menghilangkan margin untuk semua elemen */
+  padding: 0; /* Menghilangkan padding untuk semua elemen */
+  box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar dan tinggi elemen */
 }
 
 body {
-  overflow-x: hidden; /* Mencegah scroll horizontal */
+  margin: 0; /* Menghilangkan margin pada body */
+  overflow-x: hidden;
 }
-
 .navbar {
   background: rgba(0, 0, 0, 0.8); /* Latar belakang navbar yang lebih gelap */
   color: white;
@@ -115,7 +115,7 @@ main {
   width: 100%;
   height: 85vh;
   display: flex;
-  justify-content: center;
+  margin-top: 5cm;
   align-items: center;
   text-align: center;
   color: white;
@@ -228,9 +228,10 @@ section .btntwo {
 .carousel {
   width: 100vw;
   height: 100vh;
-  margin-top: -50px;
+  margin-top: 50px;
   overflow: hidden;
   position: relative;
+  margin-top: 20pxZ;
 }
 
 .carousel .list .item {
@@ -470,106 +471,148 @@ section .btntwo {
     font-size: 14px;
   }
 }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Jarak antar card */
+  margin-top: 3rem;
+  max-width: 100%;
+  justify-content: center;
+}
 
-.food-carousel {
-  width: 100%;
-  height: 400px; /* Atur tinggi sesuai kebutuhan */
+.card {
   position: relative;
   overflow: hidden;
-}
 
-.food-list {
-  display: flex;
-  transition: transform 0.5s ease; /* Transisi untuk pergerakan */
-}
-
-.food-item {
-  min-width: 100%; /* Setiap item mengambil lebar penuh */
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
-
-.food-content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.food-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.food-name {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.food-des {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.food-btn button {
-  margin-right: 10px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.food-btn button:hover {
-  background: #00b894; /* Warna hover */
-  color: white;
-}
-
-.food-arrows {
-  position: absolute;
-  top: 50%;
+  max-width: calc(
+    25% - 1rem
+  ); /* Mengatur lebar card menjadi 25% dari kontainer untuk 4 card per baris */
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.food-arrows button {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
+  color: black;
+  background: #fff; /* Latar belakang putih */
+  border-radius: 8px; /* Sudut melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
   cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
 }
 
-.food-arrows button:hover {
-  background: #00b894; /* Warna hover untuk tombol */
+.card:hover {
+  transform: translateY(-5px); /* Efek mengangkat saat hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih dalam saat hover */
 }
 
-/* time running */
-.food-timeRunning {
+.card img {
+  width: 100%; /* Mengatur lebar gambar 100% */
+  height: 250px; /* Mengatur tinggi gambar untuk konsistensi */
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+  transition: transform 0.3s ease; /* Transisi untuk gambar */
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Zoom gambar saat card di-hover */
+}
+
+/* Efek overlay */
+.card::after {
+  content: "";
   position: absolute;
-  z-index: 1000;
-  width: 0%;
-  height: 4px;
-  background-color: #14ff72cb;
+  top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
-  animation: runningTime 7s linear 1 forwards;
+  background: rgba(255, 255, 255, 0.5); /* Warna putih dengan transparansi */
+  opacity: 0; /* Awalnya tidak terlihat */
+  transition: opacity 0.3s ease; /* Transisi untuk efek overlay */
+  z-index: 1; /* Menempatkan overlay di bawah teks */
 }
 
-@keyframes runningTime {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+.card:hover::after {
+  opacity: 1; /* Overlay muncul saat card di-hover */
+}
+
+.card figcaption {
+  position: absolute; /* Mengatur posisi teks */
+  text-align: center;
+  top: 50%; /* Menempatkan teks di tengah */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Mengatur posisi teks ke tengah */
+  opacity: 0; /* Teks awalnya tidak terlihat */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek muncul */
+  z-index: 2; /* Menempatkan teks di atas overlay */
+}
+
+.card:hover figcaption {
+  opacity: 1; /* Teks muncul saat card di-hover */
+  transform: translate(-50%, -40%); /* Sedikit pergeseran saat muncul */
+}
+
+.card h3 {
+  font-size: 1.2rem; /* Ukuran font judul */
+  font-weight: bold;
+  margin: 0.5rem 0; /* Margin atas dan bawah */
+}
+
+.card p {
+  font-size: 0.9rem; /* Ukuran font deskripsi */
+  margin: 0; /* Menghapus margin default */
+}
+
+.footer-basic {
+  padding: 40px 0;
+  background-color: #ffffff;
+  color: #4b4c4d;
+}
+
+.footer-basic ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-basic li {
+  padding: 0 10px;
+}
+
+.footer-basic ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity: 1;
+}
+
+.footer-basic .social {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.footer-basic .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity: 0.9;
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 0;
 }
