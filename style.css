@@ -92,7 +92,15 @@ img {
   border-radius: 10px;
   background-color: #00b894;
   margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
-  margin-top: 2cm;
+}
+
+.hr2 {
+  height: 10px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: #00b894;
+  margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
+  margin-top: 3.5cm;
 }
 
 .parallax {
@@ -221,17 +229,17 @@ section .btntwo {
   margin-top: -1cm;
 }
 .about {
-  margin-top: 10px; /* Atur nilai ini sesuai kebutuhan untuk memberikan ruang */
+  margin-top: -3cm; /* Atur nilai ini sesuai kebutuhan untuk memberikan ruang */
   padding: 10px; /* Tambahkan padding jika diperlukan untuk ruang di dalam */
 }
 
 .carousel {
   width: 100vw;
   height: 100vh;
-  margin-top: 50px;
+  margin-bottom: 30px;
   overflow: hidden;
   position: relative;
-  margin-top: 20pxZ;
+  margin-top: 20px;
 }
 
 .carousel .list .item {
@@ -475,7 +483,7 @@ section .btntwo {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem; /* Jarak antar card */
-  margin-top: 3rem;
+  margin-top: -3cm;
   max-width: 100%;
   justify-content: center;
 }
